@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog - Moginku</title>
+  <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+  <style>
+    /* Aplica às imagens inseridas pelo CKEditor */
+    .post-conteudo img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 1rem auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="logo-centralizada">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'images/logo2.png' %}" alt="Logo Moginku" />
+    </a>
+  </div>
+
+  <!-- Container de posts -->
+  <main class="blog-container">
+
+    {% for post in posts %}
+    <article class="post">
+      <div class="post-header">
+        <h2>{{ post.titulo }}</h2>
+      </div>
+      <p class="post-date">Publicado em {{ post.criado_em|date:"d/m/Y" }}</p>
+      <div class="post-conteudo">
+        {{ post.conteudo|safe }}
+      </div>
+    </article>
+    {% empty %}
+    <p>Nenhum post encontrado.</p>
+    {% endfor %}
+
+    <!-- Navegação -->
+    <div class="post-nav">
+  {% if posts.has_next %}
+    <a href="?page={{ posts.next_page_number }}" class="nav-left">⬅ Posts antigos</a>
+  {% else %}
+    <span></span>
+  {% endif %}
+
+  {% if posts.has_previous %}
+    <a href="?page={{ posts.previous_page_number }}" class="nav-right">Posts novos ➡</a>
+  {% endif %}
+</div>
+
+
+  </main>
+
+</body>
+</html>

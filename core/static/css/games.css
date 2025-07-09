@@ -1,0 +1,142 @@
+/* Fundo com imagem */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background: url('../images/background.jpg') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -2;
+}
+
+
+/* Logo fixada no topo */
+.logo-centralizada {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #ff0000;
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.logo-centralizada img {
+  max-width: 180px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-centralizada img:hover {
+  transform: scale(1.05);
+}
+
+/* Caixa preta com conteúdo centralizado */
+.games-box {
+  background-color: black;
+  max-width: 1100px;
+  margin: 160px auto 60px;
+  padding: 40px 30px;
+  border-radius: 10px;
+  
+  text-align: center;
+}
+
+
+/* Título principal */
+.games-box h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+}
+
+.games-descricao {
+  font-size: 1.1rem;
+  color: #ddd;
+  max-width: 700px;
+  margin: 20px auto 30px; /* <- margem ajustada */
+  line-height: 1.6;
+}
+
+
+/* Grid 3x2 */
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Slot do jogo */
+.game-slot {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+
+.game-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay */
+.game-slot .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+  text-shadow: 1px 1px 3px #000;
+}
+
+.game-slot:hover .overlay {
+  opacity: 1;
+}
+
+/* Animação fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .games-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .games-box {
+    margin-top: 180px;
+  }
+}

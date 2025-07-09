@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ game.nome }} - Moginku</title>
+  <link rel="stylesheet" href="{% static 'css/jogo.css' %}" />
+</head>
+<body>
+
+  <!-- Fundo geral -->
+  <div class="page-background">
+
+    <!-- Logo -->
+    <div class="logo-centralizada">
+      <a href="{% url 'home' %}">
+        <img src="{% static 'images/logo2.png' %}" alt="Logo Moginku" />
+      </a>
+    </div>
+
+    <!-- Caixa de conteúdo -->
+    <main class="content-box">
+      <h1 class="game-title">{{ game.nome }}</h1>
+
+      <!-- Slider com setas -->
+      {% if game.galeria.all %}
+      <div class="slider-container">
+        <button class="nav prev">&#10094;</button>
+
+        <div class="slider">
+          {% for imagem in game.galeria.all %}
+            <img src="{{ imagem.imagem.url }}" class="slide {% if forloop.first %}active{% endif %}" alt="Slide {{ forloop.counter }}" />
+          {% endfor %}
+        </div>
+
+        <button class="nav next">&#10095;</button>
+      </div>
+      {% endif %}
+
+      <!-- Descrição -->
+      <div class="game-description">
+        <p>{{ game.descricao }}</p>
+      </div>
+
+      <!-- Lojas -->
+      {% if game.lojas.all %}
+       <div class="store-icons">
+           {% for loja in game.lojas.all %}
+                <a href="{{ loja.url }}" target="_blank">
+                   <img src="{% static 'images/lojas/'|add:loja.nome|lower|add:'.png' %}" alt="{{ loja.nome }}">
+                </a>
+            {% endfor %}
+        </div>
+      {% endif %}
+    </main>
+
+  </div>
+
+  <script src="{% static 'js/slider.js' %}"></script>
+</body>
+</html>

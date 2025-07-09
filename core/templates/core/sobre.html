@@ -1,0 +1,64 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sobre Nós - Moginku</title>
+  <link rel="stylesheet" href="{% static 'css/sobre.css' %}" />
+</head>
+<body class="sobre-page">
+  
+  <!-- Logo -->
+  <div class="logo-centralizada">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'images/logo2.png' %}" alt="Logo Moginku" />
+    </a>
+  </div>
+
+  <!-- Texto descritivo -->
+  <div class="sobre-texto fade-in delay-1">
+    <h1>Sobre o Estúdio</h1>
+    <p>
+      Somos o Moginku, um estúdio independente brasileiro focado em criar jogos incriveis, e com personalidade. 
+      Unimos criatividade, caos e diversão para entregar experiências únicas. Conheça nossa a galera!
+    </p>
+  </div>
+
+  <!-- Membros -->
+  <div class="membros">
+    <div class="membro fade-in delay-2">
+      <div class="foto-wrapper">
+        <img src="{% static 'images/membro1.png' %}" alt="Membro 1">
+      </div>
+      <p class="nome">Mogi</p>
+      <p class="descricao">Programador e designer de sistemas</p>
+    </div>
+
+    <div class="membro fade-in delay-3">
+      <div class="foto-wrapper">
+        <img src="{% static 'images/membro2.png' %}" alt="Membro 2">
+      </div>
+      <p class="nome">Linku</p>
+      <p class="descricao">Diretor criativo e roteirista</p>
+    </div>
+
+    <div class="membro fade-in delay-4">
+      <div class="foto-wrapper">
+        <img src="{% static 'images/membro3.png' %}" alt="Membro 3">
+      </div>
+      <p class="nome">Chanfle</p>
+      <p class="descricao">Artista 2D e CEO</p>
+    </div>
+
+    <div class="membro fade-in delay-4">
+      <div class="foto-wrapper">
+        <img src="{% static 'images/membro4.png' %}" alt="Membro 4">
+      </div>
+      <p class="nome">Nero</p>
+      <p class="descricao">Som e música original</p>
+    </div>
+  </div>
+
+</body>
+</html>

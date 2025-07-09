@@ -1,0 +1,113 @@
+/* Reset básico */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-color: #1a1a1a;
+  color: white;
+}
+
+/* Logo/header */
+.logo-centralizada {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #ff0000;
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.logo-centralizada img {
+  max-width: 180px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo-centralizada img:hover {
+  transform: scale(1.05);
+}
+
+/* Container principal */
+.blog-container {
+  max-width: 800px;
+  margin: 100px auto 60px;
+  padding: 0 20px;
+}
+
+/* Post individual */
+.post {
+  margin-bottom: 60px;
+}
+
+/* Cabeçalho do post */
+.post-header {
+  background-color: red;
+  padding: 12px 20px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.post-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Data */
+.post-date {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+/* Imagem do post */
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  margin: 0 auto 10px;
+  display: block;
+  
+}
+
+
+/* Resumo do post */
+.post-resumo {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+}
+
+/* Navegação entre páginas de posts */
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: red;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.post-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.post-nav a:hover {
+  text-decoration: underline;
+}
+
+.post-conteudo img {
+  max-width: 100%;         
+  height: auto;            
+  display: block;
+  margin: 1rem auto;       
+  border-radius: 8px;      
+}

@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moginku</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+</head>
+<body>
+
+  <!-- Vídeo -->
+  <video autoplay muted loop playsinline id="background-video">
+    <source src="{% static 'video/fundo.webm' %}" type="video/webm" />
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
+
+  <!-- Conteúdo principal -->
+  <div class="content">
+    <div class="logo-container">
+      <img src="{% static 'images/logo2.png' %}" alt="Logo" />
+    </div>
+
+    <!-- Botões  -->
+    <div class="button-group">
+      <a href="{% url 'sobre' %}" class="nav-button">Sobre Nós</a>
+      <a href="{% url 'games' %}" class="nav-button">Games</a>
+      <a href="{% url 'blog_feed' %}" class="nav-button">Blog</a>
+      <a href="{% url 'contato' %}" class="nav-button">Contato</a>
+    </div>
+  </div>
+
+  <!-- Botões sociais -->
+  <div class="social-icons">
+    <a href="https://instagram.com" target="_blank">
+      <img src="{% static 'images/sociais/instagram.png' %}" alt="Instagram">
+    </a>
+    <a href="https://twitter.com" target="_blank">
+      <img src="{% static 'images/sociais/twitter.png' %}" alt="Twitter">
+    </a>
+    <a href="https://youtube.com" target="_blank">
+      <img src="{% static 'images/sociais/youtube.png' %}" alt="YouTube">
+    </a>
+  </div>
+
+
+</body>
+</html>

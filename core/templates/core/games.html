@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Games - Moginku</title>
+  <link rel="stylesheet" href="{% static 'css/games.css' %}" />
+</head>
+
+{% load static %}
+<style>
+  body {
+    background: url("{% static 'images/fundo.png' %}") no-repeat center center fixed;
+    background-size: cover;
+  }
+
+</style>
+<body class="games-page">
+
+  <div class="background"></div>
+
+  <div class="logo-centralizada">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'images/logo2.png' %}" alt="Logo Moginku" />
+    </a>
+  </div>
+
+  <div class="games-box fade-in delay-1">
+    <h1>GAMES</h1>
+    <p class="games-descricao">De uma olhada em nossos projetos!</p>
+
+    <div class="games-grid">
+      {% for game in games %}
+        <a href="{% url 'game_detail' game.slug %}" class="game-slot">
+          <img src="{{ game.imagem.url }}" alt="{{ game.nome }}">
+          <div class="overlay"><span>{{ game.nome }}</span></div>
+        </a>
+      {% empty %}
+        <p>Nenhum jogo cadastrado.</p>
+      {% endfor %}
+    </div>
+
+    <!-- Paginação -->
+    <div class="post-nav">
+      {% if games.has_previous %}
+        <a href="?page={{ games.previous_page_number }}">⬅ Jogos anteriores</a>
+      {% endif %}
+
+      {% if games.has_next %}
+        <a href="?page={{ games.next_page_number }}">Próximos jogos ➡</a>
+      {% endif %}
+    </div>
+  </div>
+
+</body>
+</html>
