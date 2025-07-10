@@ -1,8 +1,8 @@
-/* Fundo geral da página */
+/* Fundo página */
 body {
   margin: 0;
   padding: 0;
-  background-color: #1a1a1a; /* cor sólida escura */
+  background-color: #1a1a1a; 
   font-family: sans-serif;
   color: white;
 }
@@ -30,9 +30,9 @@ body {
   transform: scale(1.05);
 }
 
-/* Caixa do formulário */
+/* Caixa */
 .form-wrapper {
-  background-color: #2a2a2a; /* um pouco mais claro que o fundo */
+  background-color: #2a2a2a; 
   max-width: 600px;
   margin: 100px auto 40px;
   padding: 40px;

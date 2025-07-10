@@ -4,7 +4,6 @@ from .models import Game
 from .models import Game, GameImagem, Loja
 
 
-admin.site.register(ProjetoPortfolio)
 
 @admin.register(BlogPost)
 class BlogPostAdmin(admin.ModelAdmin):

@@ -73,8 +73,8 @@ body, html {
 }
 
 .nav-button {
-  background-color: #c40000;
-  color: white;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
   text-decoration: none;
   padding: 15px 25px;
   font-weight: bold;
