@@ -5,7 +5,7 @@ from .forms import ContatoForm
 
 def blog_feed(request):
     posts_list = BlogPost.objects.order_by('-criado_em')
-    paginator = Paginator(posts_list, 4)  # 4 posts por página
+    paginator = Paginator(posts_list, 4)  
 
     page_number = request.GET.get('page')
     posts = paginator.get_page(page_number)
@@ -17,7 +17,7 @@ def contato(request):
         form = ContatoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('contato')  # ou uma página de sucesso
+            return redirect('contato')  
     else:
         form = ContatoForm()
     return render(request, 'core/contato.html', {'form': form})

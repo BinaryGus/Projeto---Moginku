@@ -16,7 +16,7 @@ body {
 }
 
 
-/* Logo  */
+/* Logo fixada no topo */
 .logo-centralizada {
   position: fixed;
   top: 0;
@@ -39,7 +39,7 @@ body {
   transform: scale(1.05);
 }
 
-/* Caixa */
+/* Caixa preta com conteúdo centralizado */
 .games-box {
   background-color: black;
   max-width: 1100px;
@@ -61,12 +61,12 @@ body {
   font-size: 1.1rem;
   color: #ddd;
   max-width: 700px;
-  margin: 20px auto 30px; 
+  margin: 20px auto 30px; /* <- margem ajustada */
   line-height: 1.6;
 }
 
 
-/* Grid  */
+/* Grid 3x2 */
 .games-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
